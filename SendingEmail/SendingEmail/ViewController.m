@@ -25,10 +25,11 @@
 }
 
 -(void)sendMail:(id)sender{
-    mailComposer = [[MFMailComposeViewController alloc]init]; mailComposer.mailComposeDelegate = (id)self;
+    mailComposer = [[MFMailComposeViewController alloc]init];
+    mailComposer.mailComposeDelegate = (id)self;
     [mailComposer setSubject:@"Test mail"];
     [mailComposer setMessageBody:@"Testing message for the test mail" isHTML:NO];
-    [self presentViewController:mailComposer animated:YES completion:nil];
+    [self presentViewController: mailComposer animated:YES completion:nil];
     
     //[self presentModalViewController:mailComposer animated:YES]; -------------------------------
 }
@@ -42,8 +43,7 @@
     if (error) {
         NSLog(@"Error : %@",error);
     }
-    [self presentViewController: [UIApplication sharedApplication].keyWindow.rootViewController animated:YES completion:nil];
-    //[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
